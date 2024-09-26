@@ -40,7 +40,7 @@ const Theme = ({ setCurrentTheme }) => {
     <div className="m-auto text-center">
       <select
         className="select select-warning w-full max-w-xs mx-auto"
-        defaultValue="pick a pizza"
+        defaultValue="Pick A Theme"
         onChange={(e) => {
           setCurrentTheme(e.target.value);
         }}
