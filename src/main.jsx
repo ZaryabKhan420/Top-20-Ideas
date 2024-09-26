@@ -14,9 +14,9 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="" element={<Home />} />
-      <Route path="/hot" element={<Home />} />
-      <Route path="/new" element={<Home />} />
-      <Route path="/top" element={<Home />} />
+      <Route path="hot" element={<Home />} />
+      <Route path="new" element={<Home />} />
+      <Route path="top" element={<Home />} />
       <Route path="new-idea" element={<NewIdea />} />
     </Route>
   )
