@@ -5,11 +5,15 @@ import { eq } from "drizzle-orm";
 import { upVote, downVote } from "../Utils/Index";
 const IdeasGrid = ({ allIdeas, refreshData }) => {
   const handleUpVote = async (ideaDetails) => {
+    var add = 1;
+    if (Number(ideaDetails.vote) === -1) {
+      add = 2;
+    }
     if (upVote(ideaDetails.id)) {
       const result = await db
         .update(ideas)
         .set({
-          vote: Number(ideaDetails.vote) + 1,
+          vote: Number(ideaDetails.vote) + add,
         })
         .where(eq(ideaDetails.id, ideas.id));
       if (result) {
@@ -18,11 +22,15 @@ const IdeasGrid = ({ allIdeas, refreshData }) => {
     }
   };
   const handleDownVote = async (ideaDetails) => {
+    var subs = 1;
+    if (Number(ideaDetails.vote) === 1) {
+      subs = 2;
+    }
     if (downVote(ideaDetails.id)) {
       const result = await db
         .update(ideas)
         .set({
-          vote: Number(ideaDetails.vote) - 1,
+          vote: Number(ideaDetails.vote) - subs,
         })
         .where(eq(ideaDetails.id, ideas.id));
       if (result) {

@@ -27,7 +27,7 @@ const Home = () => {
         .select()
         .from(ideas)
         .orderBy(desc(orderByColumn)) // Pass the correct column to desc
-        .limit(10);
+        .limit(15);
 
       if (result) {
         setAllIdeas(result); // Log the result if data is fetched
