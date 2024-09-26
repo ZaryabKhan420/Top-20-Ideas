@@ -45,7 +45,7 @@ const Theme = ({ setCurrentTheme }) => {
           setCurrentTheme(e.target.value);
         }}
       >
-        <option disabled selected value="pick a pizza">
+        <option disabled selected value="pick a theme">
           Pick a pizza
         </option>
         {themes.map((theme) => {
